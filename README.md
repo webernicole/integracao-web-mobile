@@ -10,4 +10,5 @@ HTML5
 CSS3 
 Git & GitHub 
 ## Link para o GitHub Pages 
-https://nicoleweber.github.io/integracao-web-mobile
+https://webernicole.github.io/integracao-web-mobile
+
