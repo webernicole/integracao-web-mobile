@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HTML, Bancos de Dados e Mobile — Projeto</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1>HTML, Bancos de Dados e Mobile</h1>
+      <nav>
+        <a href="#introducao">Introdução</a>
+        <a href="#html">HTML / Web</a>
+        <a href="#bd">Banco de Dados</a>
+        <a href="#mobile">Mobile</a>
+        <a href="#integracao">Integração</a>
+        <a href="#exemplos">Exemplos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="introducao" class="card">
+      <h2>Introdução</h2>
+      <p>Este projeto pesquisa como HTML (front-end), bancos de dados e aplicativos mobile trabalham juntos em sistemas reais. O site apresenta conceitos, fluxo de integração e exemplos práticos (ex.: iFood, Nubank).</p>
+    </section>
+
+    <section id="html" class="card">
+      <h2>O que é HTML e como funciona no front-end</h2>
+      <p>HTML (HyperText Markup Language) é a linguagem de marcação usada para estruturar conteúdo na web. No front-end, o HTML define a estrutura (títulos, parágrafos, listas, formulários). O HTML é combinado com CSS (estilo) e JavaScript (comportamento) para criar páginas interativas.</p>
+
+      <ul>
+        <li><strong>HTML:</strong> estrutura (semântica)</li>
+        <li><strong>CSS:</strong> aparência e layout responsivo</li>
+        <li><strong>JavaScript:</strong> interações, chamadas a APIs</li>
+      </ul>
+    </section>
+
+    <section id="bd" class="card">
+      <h2>O que é um banco de dados e por que é importante</h2>
+      <p>Um banco de dados armazena e organiza dados de forma persistente. Ele permite buscar, inserir, atualizar e excluir informações usadas pelo sistema: dados de usuários, pedidos, transações, inventário, etc.</p>
+
+      <p>Tipos comuns:</p>
+      <ul>
+        <li><strong>Relacionais (SQL):</strong> MySQL, PostgreSQL — tabelas com relações.</li>
+        <li><strong>NoSQL:</strong> MongoDB, Redis — documentos, chave-valor, ideal para alta escalabilidade e dados não estruturados.</li>
+      </ul>
+
+      <p>Por que é importante: integridade dos dados, consultas eficientes e persistência entre sessões e dispositivos.</p>
+    </section>
+
+    <section id="mobile" class="card">
+      <h2>O que são aplicativos mobile e como se comunicam com servidores</h2>
+      <p>Aplicativos mobile (Android, iOS) são programas instalados em celulares. Para obter/guardar dados, eles se comunicam com servidores via rede (HTTP/HTTPS). Essa comunicação normalmente usa APIs REST ou GraphQL que expõem endpoints (URLs) que o app consome.</p>
+
+      <p>Fluxo de comunicação básico:</p>
+      <ol>
+        <li>App envia requisição (ex.: POST /login) via HTTPS.</li>
+        <li>Servidor processa, consulta o banco de dados, gera resposta (JSON).</li>
+        <li>App recebe JSON e atualiza a interface para o usuário.</li>
+      </ol>
+    </section>
+
+    <section id="integracao" class="card">
+      <h2>Como HTML, banco de dados e mobile se integram em sistemas reais</h2>
+      <p>Resumo do fluxo completo:</p>
+      <ol>
+        <li>Front-end (site em HTML/CSS/JS) e app mobile enviam requisições HTTP para o backend (API).</li>
+        <li>O backend (servidor) autentica, processa lógica de negócio e usa o banco de dados para ler/escrever dados.</li>
+        <li>O banco de dados persiste as informações (usuário, pedido, histórico).</li>
+        <li>O backend responde com dados (JSON); front-end ou app renderizam para o usuário.</li>
+      </ol>
+
+      <p>Componentes típicos:</p>
+      <ul>
+        <li>Cliente web (HTML/CSS/JS) — visualização para navegadores</li>
+        <li>App mobile — experiência nativa</li>
+        <li>API/Servidor — lógica e segurança</li>
+        <li>Banco de dados — persistência</li>
+      </ul>
+    </section>
+
+    <section id="exemplos" class="card">
+      <h2>Exemplos práticos</h2>
+
+      <article>
+        <h3>iFood (exemplo de app de delivery)</h3>
+        <p>Fluxo simplificado:</p>
+        <ol>
+          <li>O usuário abre o app (mobile) ou site (HTML) e busca restaurantes.</li>
+          <li>O app faz requisição à API para listar restaurantes e menus.</li>
+          <li>Ao criar um pedido, o backend grava o pedido no banco (pedidos, itens, endereço).</li>
+          <li>O sistema notifica restaurante e entregador (websockets/ push notifications).</li>
+          <li>Pagamentos podem ser tratados por gateways externos (ex.: PagSeguro, Stripe) e o resultado registrado no banco.</li>
+        </ol>
+      </article>
+
+      <article>
+        <h3>Nubank (exemplo de app bancário)</h3>
+        <p>Fluxo simplificado:</p>
+        <ol>
+          <li>App mobile requisita saldo/últimas transações via API segura (HTTPS + autenticação forte).</li>
+          <li>Servidor autentica o usuário (tokens JWT, sessões), consulta banco de dados relacional e retorna dados criptografados.</li>
+          <li>Operações financeiras passam por validações, controle de concorrência e armazenam logs e transações no BD.</li>
+          <li>Notificações em tempo real podem usar push notifications ou streams.</li>
+        </ol>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
